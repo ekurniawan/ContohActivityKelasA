@@ -20,8 +20,9 @@
         </activity>
         <activity
             android:name=".SimpleCalcActivity"
-            android:label="Simple Calclulator"></activity>
-        <activity android:name=".ParsingNilaiActivity"></activity>
+            android:label="Simple Calclulator" />
+        <activity android:name=".ParsingNilaiActivity" />
+        <activity android:name=".PreferenceActivity"></activity>
     </application>
 
 </manifest>
