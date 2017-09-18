@@ -29,6 +29,7 @@ public class PreferenceActivity extends AppCompatActivity {
                         PreferenceActivity.this.getSharedPreferences("myPref",MODE_PRIVATE);
                 SharedPreferences.Editor edit = prefs.edit();
                 edit.putString("warna",txtDataPref.getText().toString());
+                edit.commit();
             }
         });
 
