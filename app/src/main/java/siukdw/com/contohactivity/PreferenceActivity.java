@@ -30,6 +30,8 @@ public class PreferenceActivity extends AppCompatActivity {
                 SharedPreferences.Editor edit = prefs.edit();
                 edit.putString("warna",txtDataPref.getText().toString());
                 edit.commit();
+                Toast.makeText(PreferenceActivity.this, "Preference berhasil dibuat",
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
