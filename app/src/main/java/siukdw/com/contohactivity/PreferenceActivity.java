@@ -29,6 +29,7 @@ public class PreferenceActivity extends AppCompatActivity {
                         PreferenceActivity.this.getSharedPreferences("myPref",MODE_PRIVATE);
                 SharedPreferences.Editor edit = prefs.edit();
                 edit.putString("warna",txtDataPref.getText().toString());
+                edit.putBoolean("isMute",true);
                 edit.commit();
                 Toast.makeText(PreferenceActivity.this, "Preference berhasil dibuat",
                         Toast.LENGTH_SHORT).show();
@@ -41,7 +42,8 @@ public class PreferenceActivity extends AppCompatActivity {
                 SharedPreferences prefs =
                         PreferenceActivity.this.getSharedPreferences("myPref",MODE_PRIVATE);
                 String warna = prefs.getString("warna","");
-                Toast.makeText(PreferenceActivity.this, "Warna : "+ warna,
+                boolean isMute = prefs.getBoolean("isMute",false);
+                Toast.makeText(PreferenceActivity.this, "Warna : "+ warna+" Mute: "+isMute,
                         Toast.LENGTH_SHORT).show();
             }
         });
