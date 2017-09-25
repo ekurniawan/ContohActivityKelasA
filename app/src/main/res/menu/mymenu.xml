@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menuSimpleCalc" android:title="Simple Calc" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menuSimpleCalc" app:showAsAction="always"
+        android:title="Simple Calc" android:icon="@mipmap/ic_simplecalc" />
     <item android:id="@+id/menuSimpleList" android:title="Simple List" />
     <item android:id="@+id/menuPref" android:title="Preference" />
 </menu>

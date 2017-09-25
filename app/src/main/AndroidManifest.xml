@@ -14,6 +14,7 @@
             android:label="Main Page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,12 +24,9 @@
         <activity android:name=".ParsingNilaiActivity" />
         <activity
             android:name=".PreferenceActivity"
-            android:label="Sample Preference">
-
-        </activity>
-        <activity android:name=".SimpleListActivity">
-
-        </activity>
+            android:label="Sample Preference"></activity>
+        <activity android:name=".SimpleListActivity"></activity>
+        <activity android:name=".SimpleRecyclerView"></activity>
     </application>
 
 </manifest>
