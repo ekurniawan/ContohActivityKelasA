@@ -11,16 +11,20 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="Main Page">
-
-        </activity>
+            android:label="Main Page"></activity>
         <activity
             android:name=".SimpleCalcActivity"
             android:label="Simple Calclulator" />
         <activity android:name=".ParsingNilaiActivity" />
-        <activity android:name=".PreferenceActivity" android:label="Sample Preference">
+        <activity
+            android:name=".PreferenceActivity"
+            android:label="Sample Preference">
+
+        </activity>
+        <activity android:name=".SimpleListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
