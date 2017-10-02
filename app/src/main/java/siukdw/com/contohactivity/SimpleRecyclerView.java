@@ -47,7 +47,8 @@ public class SimpleRecyclerView extends AppCompatActivity {
                 new RecyclerItemListener.RecyclerTouchListener(){
                     @Override
                     public void OnClickItem(View v, int position) {
-                        Toast.makeText(SimpleRecyclerView.this,"Clicked",
+                        String negara = arrCountry.get(position).getName();
+                        Toast.makeText(SimpleRecyclerView.this,"Anda memilih negara "+negara,
                                 Toast.LENGTH_LONG).show();
                     }
 
