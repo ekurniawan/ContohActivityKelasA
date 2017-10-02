@@ -42,5 +42,15 @@ public class DetailCountryActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        btnDeleteCountry = (Button)findViewById(R.id.btnDeleteCountry);
+        btnDeleteCountry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SimpleRecyclerView.arrCountry.remove(position);
+                Toast.makeText(DetailCountryActivity.this,"Delete data berhasil !",Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
     }
 }
