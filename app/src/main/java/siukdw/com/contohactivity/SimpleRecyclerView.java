@@ -1,5 +1,6 @@
 package siukdw.com.contohactivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -14,9 +15,13 @@ import models.Country;
 
 public class SimpleRecyclerView extends AppCompatActivity {
     private RecyclerView rvData;
-    public ArrayList<Country> arrCountry = new ArrayList<>();
+    public static ArrayList<Country> arrCountry = new ArrayList<>();
 
-    private void IsiData(){
+    static {
+        IsiData();
+    }
+
+    private static void IsiData(){
         Country country1 = new Country();
         country1.setName("Indonesia");
         country1.setPopulation(250000000);
@@ -39,7 +44,6 @@ public class SimpleRecyclerView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_recycler_view);
 
-        IsiData();
         rvData = (RecyclerView)findViewById(R.id.rvData);
         CountryAdapter adapter = new CountryAdapter(arrCountry);
         rvData.setAdapter(adapter);
@@ -48,9 +52,12 @@ public class SimpleRecyclerView extends AppCompatActivity {
                 new RecyclerItemListener.RecyclerTouchListener(){
                     @Override
                     public void OnClickItem(View v, int position) {
-                        String negara = arrCountry.get(position).getName();
-                        Toast.makeText(SimpleRecyclerView.this,"Anda memilih negara "+negara,
-                                Toast.LENGTH_LONG).show();
+                        Intent intentDetail = new Intent(SimpleRecyclerView.this,
+                                DetailCountryActivity.class);
+                        Bundle b = new Bundle();
+                        b.putInt("position",position);
+                        intentDetail.putExtras(b);
+                        startActivity(intentDetail);
                     }
 
                     @Override
