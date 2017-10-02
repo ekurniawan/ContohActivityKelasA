@@ -1,6 +1,7 @@
 package siukdw.com.contohactivity;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -58,6 +59,10 @@ public class SimpleRecyclerView extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                     }
                 }));
+
+        //menambahkan horsontal line
+        rvData.addItemDecoration(new DividerItemDecoration(ContextCompat.getDrawable(getApplicationContext(),
+                R.drawable.item_decorator)));
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
