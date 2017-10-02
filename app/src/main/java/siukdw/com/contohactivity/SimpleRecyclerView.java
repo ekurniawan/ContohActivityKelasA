@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -40,6 +42,21 @@ public class SimpleRecyclerView extends AppCompatActivity {
         rvData = (RecyclerView)findViewById(R.id.rvData);
         CountryAdapter adapter = new CountryAdapter(arrCountry);
         rvData.setAdapter(adapter);
+
+        rvData.addOnItemTouchListener(new RecyclerItemListener(getApplicationContext(),rvData,
+                new RecyclerItemListener.RecyclerTouchListener(){
+                    @Override
+                    public void OnClickItem(View v, int position) {
+                        Toast.makeText(SimpleRecyclerView.this,"Clicked",
+                                Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void OnLongClickItem(View v, int position) {
+                        Toast.makeText(SimpleRecyclerView.this,"Long Press",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }));
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
