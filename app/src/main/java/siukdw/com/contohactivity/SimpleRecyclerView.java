@@ -13,7 +13,7 @@ import models.Country;
 
 public class SimpleRecyclerView extends AppCompatActivity {
     private RecyclerView rvData;
-    private ArrayList<Country> arrCountry = new ArrayList<>();
+    public ArrayList<Country> arrCountry = new ArrayList<>();
 
     private void IsiData(){
         Country country1 = new Country();
