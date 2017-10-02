@@ -52,5 +52,4 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.MyViewHo
         return countryList.size();
     }
 
-
 }
