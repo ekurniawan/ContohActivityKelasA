@@ -40,10 +40,12 @@ public class SimpleRecyclerView extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple_recycler_view);
+    protected void onResume() {
+        super.onResume();
+        SetData();
+    }
 
+    private void SetData(){
         rvData = (RecyclerView)findViewById(R.id.rvData);
         CountryAdapter adapter = new CountryAdapter(arrCountry);
         rvData.setAdapter(adapter);
@@ -74,5 +76,13 @@ public class SimpleRecyclerView extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rvData.setLayoutManager(llm);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_simple_recycler_view);
+
+        SetData();
     }
 }

@@ -67,9 +67,11 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <Button
+                    android:id="@+id/btnEditCountry"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" android:text="Edit" />
                 <Button
+                    android:id="@+id/btnDeleteCountry"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" android:text="Delete" />
             </LinearLayout>

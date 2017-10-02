@@ -2,12 +2,19 @@ package siukdw.com.contohactivity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.text.NumberFormat;
 
 import models.Country;
 
 public class DetailCountryActivity extends AppCompatActivity {
     private EditText etCountry,etPopulation;
+    private Button btnEditCountry,btnDeleteCountry;
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +26,21 @@ public class DetailCountryActivity extends AppCompatActivity {
 
         if(getIntent().getExtras()!=null){
             Bundle b = getIntent().getExtras();
-            int position = b.getInt("position");
+            position = b.getInt("position");
             Country currCountry = SimpleRecyclerView.arrCountry.get(position);
             etCountry.setText(currCountry.getName());
-            etPopulation.setText(String.valueOf(currCountry.getPopulation()));
+            etPopulation.setText(NumberFormat.getIntegerInstance().format(currCountry.getPopulation()));
         }
+
+        btnEditCountry = (Button)findViewById(R.id.btnEditCountry);
+        btnEditCountry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Country editCountry = SimpleRecyclerView.arrCountry.get(position);
+                editCountry.setPopulation(Double.parseDouble(etPopulation.getText().toString()));
+                Toast.makeText(DetailCountryActivity.this,"Edit data berhasil !",Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
     }
 }
